@@ -52,7 +52,7 @@ public class Controller {
                 String cur = contents.get(i);
                 String[] strings = cur.replaceAll("\\s+", "").split(",");
 
-                if(strings[0].equals(key)) {
+                if(strings[0].equals(key.replaceAll("\\s+", ""))) {
                     dvd = cur;
                     break;
                 }

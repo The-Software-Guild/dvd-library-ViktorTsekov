@@ -7,7 +7,7 @@ public class Main {
         try {
             new Injector().makeInterface().startApplication();
         } catch (Exception e) {
-            System.out.println("Unexpected error has occurred!");
+            System.out.println("\nUnexpected error has occurred!");
         }
     }
 }
