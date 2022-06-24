@@ -1,11 +1,14 @@
-package org.Viktor.dvd_library;
+package org.Viktor.dvd_library.view;
+
+import org.Viktor.dvd_library.dependency_injector.Injector;
+import org.Viktor.dvd_library.controller.Controller;
 
 import java.util.Scanner;
 
 public class Interface {
     Controller controller;
     Scanner scanner;
-    Interface(Injector inj) {
+    public Interface(Injector inj) {
         controller = inj.makeController();
         scanner = inj.makeScanner();
     }
