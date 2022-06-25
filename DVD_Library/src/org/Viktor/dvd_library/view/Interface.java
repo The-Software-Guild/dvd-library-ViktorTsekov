@@ -6,11 +6,12 @@ import org.Viktor.dvd_library.controller.Controller;
 import java.util.Scanner;
 
 public class Interface {
-    Controller controller;
-    Scanner scanner;
-    public Interface(Injector inj) {
-        controller = inj.makeController();
-        scanner = inj.makeScanner();
+    private Controller controller;
+    private Scanner scanner;
+
+    public Interface(Controller controller, Scanner scanner) {
+        this.controller = controller;
+        this.scanner = scanner;
     }
 
     public void startApplication() throws Exception {

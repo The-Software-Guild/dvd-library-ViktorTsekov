@@ -15,10 +15,14 @@ public class Injector implements DependencyManager {
     }
 
     @Override
-    public Scanner makeScanner() { return new Scanner(System.in); }
+    public Scanner makeScanner() {
+        return new Scanner(System.in);
+    }
 
     @Override
-    public Controller makeController() { return new Controller(new Injector()); }
+    public Controller makeController() {
+        return new Controller(new Injector().makeHelper(), new Injector().makeDbConnection());
+    }
 
     @Override
     public ConnectToDb makeDbConnection() {
@@ -27,6 +31,6 @@ public class Injector implements DependencyManager {
 
     @Override
     public Interface makeInterface() {
-        return new Interface(new Injector());
+        return new Interface(new Injector().makeController(), new Injector().makeScanner());
     }
 }

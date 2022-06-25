@@ -10,9 +10,9 @@ public class Controller {
     private Helper helper;
     private ConnectToDb dbConnection;
 
-    public Controller(Injector inj) {
-        helper = inj.makeHelper();
-        dbConnection = inj.makeDbConnection();
+    public Controller(Helper helper, ConnectToDb dbConnection) {
+        this.helper = helper;
+        this.dbConnection = dbConnection;
     }
 
     public void addNewDvd(String userInput) {
